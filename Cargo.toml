@@ -1,0 +1,15 @@
+[package]
+authors = ["Chris Bruce <chris@blockjoy.com>"]
+categories = ["cryptography::cryptocurrencies"]
+description = "A high performance API for managing pending transaction on the helium network."
+edition = "2021"
+homepage = "https://github.com/blockjoy/helium-txn-gateway/"
+keywords = ["helium", "blockjoy", "api", "blockchain", "cryptocurrency"]
+license = "Apache-2.0"
+license-file = "LICENSE"
+name = "helium-txn-gateway"
+readme = "README.md"
+repository = "https://github.com/blockjoy/helium-txn-gateway/"
+version = "0.1.0"
+
+[dependencies]
