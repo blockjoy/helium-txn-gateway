@@ -1,3 +1,4 @@
+use crate::clients::BlockchainNodeClient;
 use crate::{blockchain, config::Config};
 use axum::{
     extract::{Extension, Json, Path},
@@ -84,7 +85,7 @@ type NodePool = Arc<blockchain::NodePool>;
 async fn create_pending_transaction(
     Json(payload): Json<blockchain::PendingTransactionReq>,
     Extension(state): Extension<NodePool>,
-) {
+) -> Json<blockchain::ResponseData> {
     unimplemented!()
 }
 
@@ -92,7 +93,7 @@ async fn create_pending_transaction(
 async fn get_pending_transaction_status(
     Path(hash): Path<String>,
     Extension(state): Extension<NodePool>,
-) {
+) -> Json<blockchain::ResponseData> {
     unimplemented!()
 }
 

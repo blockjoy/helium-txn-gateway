@@ -1,4 +1,5 @@
 mod blockchain;
+mod clients;
 mod config;
 mod server;
 

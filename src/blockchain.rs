@@ -1,10 +1,15 @@
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
+use serde_json::Value;
 use std::hash::{Hash, Hasher};
 use std::net::SocketAddr;
 
+#[derive(Deserialize, Serialize)]
+pub struct ResponseData {
+    pub data: String,
+}
 #[derive(Deserialize)]
 pub struct PendingTransactionReq {
-    pub txn: String,
+    pub data: Value,
 }
 
 pub struct NodePool {

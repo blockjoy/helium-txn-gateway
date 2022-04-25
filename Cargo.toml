@@ -13,12 +13,15 @@ repository = "https://github.com/blockjoy/helium-txn-gateway/"
 version = "0.1.0"
 
 [dependencies]
+anyhow = "1.0.57"
 axum = "0.5"
-dotenv = "0.15.0"
+dotenv = "0.15"
 jsonrpc_client = {version = "*", features = ["reqwest"]}
+reqwest = "0.11"
 serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
 tokio = {version = "1.0", features = ["full"]}
-tower = "0.4.12"
-tower-http = {version = "0.2.0", features = ["add-extension", "trace"]}
+tower = "0.4"
+tower-http = {version = "0.2", features = ["add-extension", "trace"]}
 tracing = "0.1"
 tracing-subscriber = {version = "0.3", features = ["env-filter"]}
