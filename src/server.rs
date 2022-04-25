@@ -19,9 +19,10 @@ pub async fn start(config: Config) {
     let node_pool: NodePool = NodePool::new(blockchain::NodePool::new(config.node_addrs));
 
     let app = Router::new()
+        .route("/health", get(health_check))
         .route(
             "/v1/pending_transactions/:hash",
-            get(get_pending_transaction),
+            get(get_pending_transaction_status),
         )
         .route("/v1/pending_transactions", post(create_pending_transaction))
         .layer(
@@ -79,6 +80,7 @@ pub async fn start(config: Config) {
 
 type NodePool = Arc<blockchain::NodePool>;
 
+/// Creates a pending transaction
 async fn create_pending_transaction(
     Json(payload): Json<blockchain::PendingTransactionReq>,
     Extension(state): Extension<NodePool>,
@@ -86,6 +88,15 @@ async fn create_pending_transaction(
     unimplemented!()
 }
 
-async fn get_pending_transaction(Path(hash): Path<String>, Extension(state): Extension<NodePool>) {
+// Looks up a pending transaction status
+async fn get_pending_transaction_status(
+    Path(hash): Path<String>,
+    Extension(state): Extension<NodePool>,
+) {
     unimplemented!()
+}
+
+//Health Check
+async fn health_check() -> &'static str {
+    "OK"
 }

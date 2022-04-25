@@ -15,6 +15,7 @@ version = "0.1.0"
 [dependencies]
 axum = "0.5"
 dotenv = "0.15.0"
+jsonrpc_client = {version = "*", features = ["reqwest"]}
 serde = {version = "1.0", features = ["derive"]}
 tokio = {version = "1.0", features = ["full"]}
 tower = "0.4.12"
